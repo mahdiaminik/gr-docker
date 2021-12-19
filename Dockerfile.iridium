@@ -1,0 +1,15 @@
+FROM gr-docker
+
+RUN apt-get -y install \
+libhidapi-dev \
+autoconf
+
+
+RUN pybombs install gr-osmosdr
+
+RUN cd ~/prefix-3.8/src/ && \
+git clone -b maint-3.8 https://github.com/muccc/gr-iridium && \
+pybombs install gr-iridium
+
+RUN cd ~/prefix-3.8/src/ && \
+git clone https://github.com/muccc/iridium-toolkit.git

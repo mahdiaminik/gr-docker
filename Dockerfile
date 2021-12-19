@@ -32,9 +32,10 @@ gir1.2-gtk-3.0 \
 doxygen \
 cmake \
 libusb-1.0-0-dev
-
+#git
 RUN pip3 install pybombs && \
 pybombs auto-config && \
 pybombs recipes add-defaults
 
 RUN pybombs prefix init ~/prefix-3.8 -R gnuradio-default
+
